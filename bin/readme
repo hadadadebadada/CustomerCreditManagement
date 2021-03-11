@@ -1,0 +1,51 @@
+
+Artur Pfeifer MatrikelNr: 879089
+
+Datenbankbenutzer Stud32
+
+
+
+Verwendete SQL-Befehle:
+
+drop table HA2_kunde cascade constraints;
+drop sequence HA2_kunde_seq;
+create table HA2_kunde (
+kundennr int primary key,
+name varchar2(80),
+vorname varchar2(80),
+GebDatum varchar2(10)
+);
+create sequence HA2_kunde_seq increment by 1
+start with 1 minvalue 1 maxvalue 999999 nocycle cache 20 noorder;
+
+drop table HA2_kreditvertrag cascade constraints;
+drop sequence HA2_kreditvertrag_seq;
+create table HA2_kreditvertrag (
+anr number primary key,
+kdnr number references HA2_kunde(kundennr),
+adatum date
+);
+create sequence HA2_kreditvertrag_seq increment by 1
+start with 1 minvalue 1 maxvalue 999999 nocycle cache 20 noorder;
+
+
+drop table HA2_kreditvertragspos cascade constraints;
+drop sequence HA2_kreditvertrags_pos_seq;
+create table HA2_kreditvertragspos(
+posnr int primary key,
+nr_im_vertrag int not null,
+anr number references HA2_kreditvertrag(anr),
+vertragsart varchar2(50),
+kreditbetrag number,
+zinsbindungsdauer number,
+vereinbartersollzins number,
+tilgungsrate number,
+grundbucheintrag varchar2(60),
+flurparzelle varchar2(60),
+namedeskonsumguts varchar2(60)
+);
+create sequence HA2_kreditvertrags_pos_seq increment by 1
+start with 1 minvalue 1 maxvalue 999999 nocycle cache 20 noorder;
+
+
+commit;

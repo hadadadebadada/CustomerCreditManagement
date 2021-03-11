@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="270.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dlg.hauptmenue.HauptmenueController">
+   <children>
+      <Button fx:id="bt_scene2" layoutX="71.0" layoutY="109.0" mnemonicParsing="false" onAction="#bt_scene2Clicked" text="Kunde anlegen" />
+      <Button fx:id="bt_beenden" layoutX="240.0" layoutY="109.0" mnemonicParsing="false" onAction="#bt_beendenClicked" text="Beenden" />
+      <Button fx:id="bt_kundenliste" layoutX="71.0" layoutY="64.0" mnemonicParsing="false" onAction="#bt_kundenlisteClicked" text="Kundenliste" />
+      <Button fx:id="bt_kreditvertraege" layoutX="73.0" layoutY="149.0" mnemonicParsing="false" onAction="#bt_kreditvertraegeClicked" text="Kreditverträge" />
+   </children>
+</AnchorPane>
